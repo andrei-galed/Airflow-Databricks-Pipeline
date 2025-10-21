@@ -1,0 +1,14 @@
+[2025-10-08T19:59:19.021+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 04_api_to_postgres.get_data_from_api manual__2025-10-08T19:59:16.372151+00:00 [queued]>
+[2025-10-08T19:59:19.038+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 04_api_to_postgres.get_data_from_api manual__2025-10-08T19:59:16.372151+00:00 [queued]>
+[2025-10-08T19:59:19.039+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-08T19:59:19.067+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): get_data_from_api> on 2025-10-08 19:59:16.372151+00:00
+[2025-10-08T19:59:19.087+0000] {standard_task_runner.py:57} INFO - Started process 2949 to run task
+[2025-10-08T19:59:19.096+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '04_api_to_postgres', 'get_data_from_api', 'manual__2025-10-08T19:59:16.372151+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/04_example.py', '--cfg-path', '/tmp/tmpiv8axzgd']
+[2025-10-08T19:59:19.102+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask get_data_from_api
+[2025-10-08T19:59:19.231+0000] {task_command.py:410} INFO - Running <TaskInstance: 04_api_to_postgres.get_data_from_api manual__2025-10-08T19:59:16.372151+00:00 [running]> on host a4407e4abc2c
+[2025-10-08T19:59:19.415+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='bryan@gmail.com' AIRFLOW_CTX_DAG_OWNER='andrei' AIRFLOW_CTX_DAG_ID='04_api_to_postgres' AIRFLOW_CTX_TASK_ID='get_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2025-10-08T19:59:16.372151+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-08T19:59:16.372151+00:00'
+[2025-10-08T19:59:19.776+0000] {logging_mixin.py:149} INFO - {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz'}
+[2025-10-08T19:59:19.779+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-08T19:59:19.802+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=04_api_to_postgres, task_id=get_data_from_api, execution_date=20251008T195916, start_date=20251008T195919, end_date=20251008T195919
+[2025-10-08T19:59:19.871+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-08T19:59:19.912+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

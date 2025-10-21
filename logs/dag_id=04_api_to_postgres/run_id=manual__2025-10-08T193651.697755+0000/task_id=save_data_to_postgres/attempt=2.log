@@ -1,0 +1,39 @@
+[2025-10-08T19:39:04.867+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 04_api_to_postgres.save_data_to_postgres manual__2025-10-08T19:36:51.697755+00:00 [queued]>
+[2025-10-08T19:39:04.886+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 04_api_to_postgres.save_data_to_postgres manual__2025-10-08T19:36:51.697755+00:00 [queued]>
+[2025-10-08T19:39:04.887+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-10-08T19:39:04.916+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): save_data_to_postgres> on 2025-10-08 19:36:51.697755+00:00
+[2025-10-08T19:39:04.930+0000] {standard_task_runner.py:57} INFO - Started process 2604 to run task
+[2025-10-08T19:39:04.944+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '04_api_to_postgres', 'save_data_to_postgres', 'manual__2025-10-08T19:36:51.697755+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/04_example.py', '--cfg-path', '/tmp/tmppze4ihk9']
+[2025-10-08T19:39:04.949+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask save_data_to_postgres
+[2025-10-08T19:39:05.094+0000] {task_command.py:410} INFO - Running <TaskInstance: 04_api_to_postgres.save_data_to_postgres manual__2025-10-08T19:36:51.697755+00:00 [running]> on host a4407e4abc2c
+[2025-10-08T19:39:05.268+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='bryan@gmail.com' AIRFLOW_CTX_DAG_OWNER='andrei' AIRFLOW_CTX_DAG_ID='04_api_to_postgres' AIRFLOW_CTX_TASK_ID='save_data_to_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-10-08T19:36:51.697755+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-08T19:36:51.697755+00:00'
+[2025-10-08T19:39:05.329+0000] {base.py:73} INFO - Using connection ID 'postgres_datapath' for task execution.
+[2025-10-08T19:39:05.362+0000] {sql.py:375} INFO - Running statement: INSERT INTO users (name,username,email) VALUES ('Leanne Graham','Bret','Sincere@april.biz');, parameters: None
+[2025-10-08T19:39:05.372+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/04_example.py", line 39, in save_to_postgres
+    postgreshook.run(f"INSERT INTO users (name,username,email) VALUES ('{name}','{username}','{email}');")
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedTable: relation "users" does not exist
+LINE 1: INSERT INTO users (name,username,email) VALUES ('Leanne Grah...
+                    ^
+
+[2025-10-08T19:39:05.415+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=04_api_to_postgres, task_id=save_data_to_postgres, execution_date=20251008T193651, start_date=20251008T193904, end_date=20251008T193905
+[2025-10-08T19:39:05.446+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/email.py:152: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2025-10-08T19:39:05.448+0000] {email.py:268} INFO - Email alerting: attempt 1
+[2025-10-08T19:39:06.223+0000] {email.py:280} INFO - Sent an alert email to ['bryan@gmail.com']
+[2025-10-08T19:39:08.300+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 16 for task save_data_to_postgres (relation "users" does not exist
+LINE 1: INSERT INTO users (name,username,email) VALUES ('Leanne Grah...
+                    ^
+; 2604)
+[2025-10-08T19:39:08.368+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-08T19:39:08.408+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

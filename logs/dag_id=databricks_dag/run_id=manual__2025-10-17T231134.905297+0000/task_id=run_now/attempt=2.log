@@ -1,0 +1,27 @@
+[2025-10-17T23:16:52.219+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: databricks_dag.run_now manual__2025-10-17T23:11:34.905297+00:00 [queued]>
+[2025-10-17T23:16:52.237+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: databricks_dag.run_now manual__2025-10-17T23:11:34.905297+00:00 [queued]>
+[2025-10-17T23:16:52.238+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-10-17T23:16:52.272+0000] {taskinstance.py:1327} INFO - Executing <Task(DatabricksRunNowOperator): run_now> on 2025-10-17 23:11:34.905297+00:00
+[2025-10-17T23:16:52.290+0000] {standard_task_runner.py:57} INFO - Started process 2467 to run task
+[2025-10-17T23:16:52.300+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'databricks_dag', 'run_now', 'manual__2025-10-17T23:11:34.905297+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/databricks_dag.py', '--cfg-path', '/tmp/tmp7ltn8yd4']
+[2025-10-17T23:16:52.306+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask run_now
+[2025-10-17T23:16:52.438+0000] {task_command.py:410} INFO - Running <TaskInstance: databricks_dag.run_now manual__2025-10-17T23:11:34.905297+00:00 [running]> on host 444659dc247e
+[2025-10-17T23:16:52.647+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andrei' AIRFLOW_CTX_DAG_ID='databricks_dag' AIRFLOW_CTX_TASK_ID='run_now' AIRFLOW_CTX_EXECUTION_DATE='2025-10-17T23:11:34.905297+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-17T23:11:34.905297+00:00'
+[2025-10-17T23:16:52.669+0000] {base.py:73} INFO - Using connection ID 'databricks_conn' for task execution.
+[2025-10-17T23:16:52.783+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:16:53.374+0000] {databricks.py:52} INFO - Run submitted with run_id: 109279342154287
+[2025-10-17T23:16:53.376+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:16:53.832+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:16:54.303+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/databricks/operators/databricks.py", line 673, in execute
+    _handle_databricks_operator_execution(self, hook, self.log, context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/databricks/operators/databricks.py", line 61, in _handle_databricks_operator_execution
+    if run_state.is_terminal:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/databricks/hooks/databricks.py", line 82, in is_terminal
+    ).format(self.life_cycle_state)
+airflow.exceptions.AirflowException: Unexpected life cycle state: QUEUED: If the state has been introduced recently, please check the Databricks user guide for troubleshooting information
+[2025-10-17T23:16:54.313+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=databricks_dag, task_id=run_now, execution_date=20251017T231134, start_date=20251017T231652, end_date=20251017T231654
+[2025-10-17T23:16:54.337+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 11 for task run_now (Unexpected life cycle state: QUEUED: If the state has been introduced recently, please check the Databricks user guide for troubleshooting information; 2467)
+[2025-10-17T23:16:54.401+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-17T23:16:54.435+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2025-10-17T18:35:06.661+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: databricks_dag.run_now scheduled__2025-10-15T00:00:00+00:00 [queued]>
+[2025-10-17T18:35:06.676+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: databricks_dag.run_now scheduled__2025-10-15T00:00:00+00:00 [queued]>
+[2025-10-17T18:35:06.677+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-10-17T18:35:06.700+0000] {taskinstance.py:1327} INFO - Executing <Task(DatabricksRunNowOperator): run_now> on 2025-10-15 00:00:00+00:00
+[2025-10-17T18:35:06.713+0000] {standard_task_runner.py:57} INFO - Started process 660 to run task
+[2025-10-17T18:35:06.721+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'databricks_dag', 'run_now', 'scheduled__2025-10-15T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/databricks_dag.py', '--cfg-path', '/tmp/tmpv3azgfav']
+[2025-10-17T18:35:06.727+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask run_now
+[2025-10-17T18:35:06.854+0000] {task_command.py:410} INFO - Running <TaskInstance: databricks_dag.run_now scheduled__2025-10-15T00:00:00+00:00 [running]> on host 444659dc247e
+[2025-10-17T18:35:07.014+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andrei' AIRFLOW_CTX_DAG_ID='databricks_dag' AIRFLOW_CTX_TASK_ID='run_now' AIRFLOW_CTX_EXECUTION_DATE='2025-10-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-15T00:00:00+00:00'
+[2025-10-17T18:35:07.036+0000] {base.py:73} INFO - Using connection ID 'databricks_conn' for task execution.
+[2025-10-17T18:35:07.134+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T18:35:08.349+0000] {databricks.py:52} INFO - Run submitted with run_id: 1017923791544795
+[2025-10-17T18:35:08.351+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T18:35:08.758+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T18:35:09.144+0000] {databricks.py:93} INFO - run_now in run state: {'life_cycle_state': 'RUNNING', 'result_state': '', 'state_message': ''}
+[2025-10-17T18:35:09.145+0000] {databricks.py:94} INFO - View run status, Spark UI, and logs at https://dbc-484ef8db-1948.cloud.databricks.com/?o=1366149600607743#job/223004487989349/run/1017923791544795
+[2025-10-17T18:35:09.146+0000] {databricks.py:95} INFO - Sleeping for 30 seconds.
+[2025-10-17T18:35:39.173+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T18:35:39.559+0000] {databricks.py:93} INFO - run_now in run state: {'life_cycle_state': 'RUNNING', 'result_state': '', 'state_message': ''}
+[2025-10-17T18:35:39.561+0000] {databricks.py:94} INFO - View run status, Spark UI, and logs at https://dbc-484ef8db-1948.cloud.databricks.com/?o=1366149600607743#job/223004487989349/run/1017923791544795
+[2025-10-17T18:35:39.562+0000] {databricks.py:95} INFO - Sleeping for 30 seconds.
+[2025-10-17T18:36:09.582+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T18:36:10.129+0000] {databricks.py:63} INFO - run_now completed successfully.
+[2025-10-17T18:36:10.131+0000] {databricks.py:64} INFO - View run status, Spark UI, and logs at https://dbc-484ef8db-1948.cloud.databricks.com/?o=1366149600607743#job/223004487989349/run/1017923791544795
+[2025-10-17T18:36:10.151+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=databricks_dag, task_id=run_now, execution_date=20251015T000000, start_date=20251017T183506, end_date=20251017T183610
+[2025-10-17T18:36:10.222+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-17T18:36:10.250+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

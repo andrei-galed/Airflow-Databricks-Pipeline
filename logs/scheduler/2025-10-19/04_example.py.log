@@ -1,0 +1,7 @@
+[2025-10-19T00:27:03.142+0000] {processor.py:157} INFO - Started process (PID=48010) to work on /opt/airflow/dags/04_example.py
+[2025-10-19T00:27:03.153+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/04_example.py for tasks to queue
+[2025-10-19T00:27:03.160+0000] {logging_mixin.py:149} INFO - [2025-10-19T00:27:03.160+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/04_example.py
+[2025-10-19T00:27:03.321+0000] {processor.py:836} INFO - DAG(s) dict_keys(['04_api_to_postgres']) retrieved from /opt/airflow/dags/04_example.py
+[2025-10-19T00:27:04.246+0000] {logging_mixin.py:149} INFO - [2025-10-19T00:27:04.245+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-10-19T00:27:05.039+0000] {logging_mixin.py:149} INFO - [2025-10-19T00:27:05.039+0000] {dag.py:3490} INFO - Setting next_dagrun for 04_api_to_postgres to None, run_after=None
+[2025-10-19T00:27:05.143+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/04_example.py took 2.009 seconds

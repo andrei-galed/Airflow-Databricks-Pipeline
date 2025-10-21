@@ -1,0 +1,28 @@
+[2025-10-17T23:12:11.070+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: databricks_dag.run_now manual__2025-10-17T23:12:08.210000+00:00 [queued]>
+[2025-10-17T23:12:11.095+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: databricks_dag.run_now manual__2025-10-17T23:12:08.210000+00:00 [queued]>
+[2025-10-17T23:12:11.097+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-17T23:12:11.155+0000] {taskinstance.py:1327} INFO - Executing <Task(DatabricksRunNowOperator): run_now> on 2025-10-17 23:12:08.210000+00:00
+[2025-10-17T23:12:11.176+0000] {standard_task_runner.py:57} INFO - Started process 2384 to run task
+[2025-10-17T23:12:11.187+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'databricks_dag', 'run_now', 'manual__2025-10-17T23:12:08.210000+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/databricks_dag.py', '--cfg-path', '/tmp/tmpawyjwoej']
+[2025-10-17T23:12:11.191+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask run_now
+[2025-10-17T23:12:11.340+0000] {task_command.py:410} INFO - Running <TaskInstance: databricks_dag.run_now manual__2025-10-17T23:12:08.210000+00:00 [running]> on host 444659dc247e
+[2025-10-17T23:12:11.536+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andrei' AIRFLOW_CTX_DAG_ID='databricks_dag' AIRFLOW_CTX_TASK_ID='run_now' AIRFLOW_CTX_EXECUTION_DATE='2025-10-17T23:12:08.210000+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-17T23:12:08.210000+00:00'
+[2025-10-17T23:12:11.558+0000] {base.py:73} INFO - Using connection ID 'databricks_conn' for task execution.
+[2025-10-17T23:12:11.684+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:12:12.396+0000] {databricks.py:52} INFO - Run submitted with run_id: 217115023754462
+[2025-10-17T23:12:12.399+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:12:12.994+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:12:13.420+0000] {databricks_base.py:429} INFO - Using token auth.
+[2025-10-17T23:12:14.130+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/databricks/operators/databricks.py", line 673, in execute
+    _handle_databricks_operator_execution(self, hook, self.log, context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/databricks/operators/databricks.py", line 90, in _handle_databricks_operator_execution
+    raise AirflowException(error_message)
+airflow.exceptions.AirflowException: run_now failed with terminal state: {'life_cycle_state': 'INTERNAL_ERROR', 'result_state': 'FAILED', 'state_message': 'Task proyecto failed with message: Unable to access the notebook "/Workspace/Users/andreigaled3@gmail.com/proyecto/proyecto" in the workspace. Either it does not exist, or the identity used to run this job, Andrei Hernandez (andreigaled3@gmail.com), lacks the required permissions.'} and with the error Run failed with error message
+ Unable to access the notebook "/Workspace/Users/andreigaled3@gmail.com/proyecto/proyecto" in the workspace. Either it does not exist, or the identity used to run this job, Andrei Hernandez (andreigaled3@gmail.com), lacks the required permissions.
+[2025-10-17T23:12:14.137+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=databricks_dag, task_id=run_now, execution_date=20251017T231208, start_date=20251017T231211, end_date=20251017T231214
+[2025-10-17T23:12:14.164+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 8 for task run_now (run_now failed with terminal state: {'life_cycle_state': 'INTERNAL_ERROR', 'result_state': 'FAILED', 'state_message': 'Task proyecto failed with message: Unable to access the notebook "/Workspace/Users/andreigaled3@gmail.com/proyecto/proyecto" in the workspace. Either it does not exist, or the identity used to run this job, Andrei Hernandez (andreigaled3@gmail.com), lacks the required permissions.'} and with the error Run failed with error message
+ Unable to access the notebook "/Workspace/Users/andreigaled3@gmail.com/proyecto/proyecto" in the workspace. Either it does not exist, or the identity used to run this job, Andrei Hernandez (andreigaled3@gmail.com), lacks the required permissions.; 2384)
+[2025-10-17T23:12:14.213+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-17T23:12:14.250+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
